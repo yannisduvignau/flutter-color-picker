@@ -79,14 +79,6 @@ Assurez-vous que Firebase CLI est installé avant de lancer cette commande.
 ## Démonstration
 Voici des captures d'écran de l'application en action :
 
-<img src="assets/img/homeScreen1.png" alt="Capture d'écran de l'application" height="400"/>
-<img src="assets/img/homeScreen2.png" alt="Capture d'écran de l'application" height="400"/>
-* Ecran d'accueil : choix de la couleur en HEXA et RGB depuis un champs ou par un bouton "random"
-
-<img src="assets/img/palletScreen.png" alt="Capture d'écran de l'application" height="400"/>
-* Ecran de création d'une pallette de couleur à partir de la couleur donnée. Cette pallette peut être enregistrer et sauvegarder pour l'utilisateur connecté.
-
-<img src="assets/img/collectionScreen.png" alt="Capture d'écran de l'application" height="400"/>
-* Ecran de visualisation des pallettes enregistrées
+<div style="display: flex; justify-content: space-around;"> <img src="assets/img/homeScreen1.png" alt="Capture d'écran de l'application" height="400" style="margin-right: 20px;"/> <img src="assets/img/homeScreen2.png" alt="Capture d'écran de l'application" height="400"/> </div> * Écran d'accueil : choix de la couleur en HEXA et RGB depuis un champ ou par un bouton "random". <img src="assets/img/palletScreen.png" alt="Capture d'écran de l'application" height="400"/> * Écran de création d'une palette de couleur à partir de la couleur donnée. Cette palette peut être enregistrée et sauvegardée pour l'utilisateur connecté. <img src="assets/img/collectionScreen.png" alt="Capture d'écran de l'application" height="400"/> * Écran de visualisation des palettes enregistrées.
 
 
