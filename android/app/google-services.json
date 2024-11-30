@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "682431626582",
+    "project_id": "my-colorpick-flutter-project",
+    "storage_bucket": "my-colorpick-flutter-project.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:682431626582:android:dc38369541950ca81ceaf7",
+        "android_client_info": {
+          "package_name": "com.yduvignau.colorpicker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADCDOHT5kX1MpF8397woUJMSVcBDrFCAU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
