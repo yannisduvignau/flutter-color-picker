@@ -65,7 +65,6 @@ flutter build ios
 Si vous souhaitez exécuter Firebase en local pour le développement, vous pouvez utiliser Firebase Local Emulator Suite pour émuler Firestore et d'autres services Firebase.
 
 ```bash
-Copier le code
 firebase emulators:start
 ```
 Assurez-vous que Firebase CLI est installé avant de lancer cette commande.
@@ -76,5 +75,18 @@ Assurez-vous que Firebase CLI est installé avant de lancer cette commande.
 - Affichage des couleurs en hexadécimal : Chaque couleur est affichée avec sa valeur hexadécimale.
 - Suppression des palettes : Supprimez les palettes dont vous n'avez plus besoin.
 - Modification du nom des palettes : Modifiez facilement le nom d'une palette de couleurs.
+
+## Démonstration
+Voici des captures d'écran de l'application en action :
+
+![Capture d'écran de l'application](assets/img/homeScreen1.png)
+![Capture d'écran de l'application](assets/img/homeScreen2.png)
+* Ecran d'accueil : choix de la couleur en HEXA et RGB depuis un champs ou par un bouton "random"
+
+![Capture d'écran de l'application](assets/img/palletScreen.png)
+* Ecran de création d'une pallette de couleur à partir de la couleur donnée. Cette pallette peut être enregistrer et sauvegarder pour l'utilisateur connecté.
+
+![Capture d'écran de l'application](assets/img/collectionScreen.png)
+* Ecran de visualisation des pallettes enregistrées
 
 
