@@ -79,14 +79,14 @@ Assurez-vous que Firebase CLI est installé avant de lancer cette commande.
 ## Démonstration
 Voici des captures d'écran de l'application en action :
 
-![Capture d'écran de l'application](assets/img/homeScreen1.png)
-![Capture d'écran de l'application](assets/img/homeScreen2.png)
+<img src="assets/img/homeScreen1.png" alt="Capture d'écran de l'application" height="400"/>
+<img src="assets/img/homeScreen2.png" alt="Capture d'écran de l'application" height="400"/>
 * Ecran d'accueil : choix de la couleur en HEXA et RGB depuis un champs ou par un bouton "random"
 
-![Capture d'écran de l'application](assets/img/palletScreen.png)
+<img src="assets/img/palletScreen.png" alt="Capture d'écran de l'application" height="400"/>
 * Ecran de création d'une pallette de couleur à partir de la couleur donnée. Cette pallette peut être enregistrer et sauvegarder pour l'utilisateur connecté.
 
-![Capture d'écran de l'application](assets/img/collectionScreen.png)
+<img src="assets/img/collectionScreen.png" alt="Capture d'écran de l'application" height="400"/>
 * Ecran de visualisation des pallettes enregistrées
 
 
