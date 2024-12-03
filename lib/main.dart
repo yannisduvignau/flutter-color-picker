@@ -1,4 +1,4 @@
-import 'package:color_picker/template/color_picker_app.dart';
+import 'package:color_picker/template/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'firebase_options.dart';
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'FugazOne',
         primaryColor: Colors.black,
       ),
-      home: const ColorPickerApp(),
+      home: const SplashScreen(),
     );
   }
 }
