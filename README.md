@@ -1,84 +1,243 @@
-# Color Picker
+# 🎨 flutter-color-picker
 
-**Color Picker** est une application Flutter permettant aux utilisateurs de créer et de gérer des palettes de couleurs. Vous pouvez enregistrer vos palettes, ajouter des couleurs, voir les détails de chaque palette, et plus encore. L'application utilise Firebase pour stocker les palettes et gérer les utilisateurs.
+> A **Flutter cross-platform application** for creating, saving, and managing color palettes — backed by **Firebase Firestore** with user authentication.
 
-## Getting Started
+---
 
-### Prérequis
+## 📋 Description
 
-Avant de démarrer avec le projet, assurez-vous d'avoir installé les outils suivants :
+**flutter-color-picker** is a mobile (and desktop) application built with Flutter that lets users explore colors, build custom palettes, and save them to their personal account via Firebase.
 
-- [Flutter SDK](https://docs.flutter.dev/get-started/install)
-- [Firebase](https://firebase.google.com/docs/flutter/setup) : Assurez-vous d'avoir configuré un projet Firebase pour votre application.
-- [Android Studio / VS Code](https://flutter.dev/docs/get-started/editor) : Éditeurs recommandés pour développer des applications Flutter.
+Users can pick a color by entering a **HEX** or **RGB** value, generate it randomly, create a full palette from it, and save that palette to their Firebase collection. All data is tied to the authenticated user, making it a fully personalized experience.
 
-### Installation
+**Key features:**
+- 🎨 Pick colors via HEX code, RGB values, or random generation
+- 🖌️ Generate a full color palette from any base color
+- 💾 Save palettes to Firebase Firestore (per user)
+- 📚 Browse and manage your saved palette collection
+- ✏️ Rename palettes
+- 🗑️ Delete palettes you no longer need
+- 🔐 Firebase Authentication (email & password)
 
-Clonez le dépôt du projet :
+---
 
-```bash
-git clone https://github.com/your-username/color_picker.git
-cd color_picker
+## 📱 Screenshots
+
+### Home Screen — Color Picker
+<p float="left">
+  <img src="assets/img/homeScreen1.png" width="250" alt="Home Screen 1"/>
+  <img src="assets/img/homeScreen2.png" width="250" alt="Home Screen 2"/>
+</p>
+
+> Pick a color by entering a **HEX** or **RGB** value, or generate one randomly with the "random" button.
+
+---
+
+### Palette Creation Screen
+<img src="assets/img/palletScreen.png" width="250" alt="Palette Screen"/>
+
+> Generate a full palette from your chosen color. Save it to your personal collection with one tap.
+
+---
+
+### Collection Screen
+<img src="assets/img/collectionScreen.png" width="250" alt="Collection Screen"/>
+
+> Browse all your saved palettes, rename them, or delete the ones you no longer need.
+
+---
+
+## 🗂️ Project Structure
+
+```
+flutter-color-picker/
+├── lib/                    # Dart source code (screens, widgets, services, models)
+├── assets/
+│   └── img/                # App screenshots and image assets
+├── android/                # Android-specific configuration
+├── ios/                    # iOS-specific configuration
+├── linux/                  # Linux desktop target
+├── macos/                  # macOS desktop target
+├── windows/                # Windows desktop target
+├── web/                    # Web target
+├── test/                   # Widget and unit tests
+├── pubspec.yaml            # Flutter dependencies and assets declaration
+├── firebase.json           # Firebase hosting/emulator configuration
+└── analysis_options.yaml   # Dart static analysis rules
 ```
 
-### Configuration de Firebase
+---
 
-1. Allez sur Firebase Console.
-2. Créez un nouveau projet Firebase et connectez-le à votre application Flutter.
-3. Ajoutez les fichiers de configuration nécessaires à votre projet Flutter :
-    - Pour Android : google-services.json
-    - Pour iOS : GoogleService-Info.plist
-4. Activez Firestore et l'authentification par email et mot de passe dans la console Firebase.
+## 🛠️ Tech Stack
 
-### Dépendances
+| Layer | Technology |
+|-------|-----------|
+| Framework | Flutter |
+| Language | Dart |
+| Backend / Database | Firebase Firestore |
+| Authentication | Firebase Auth (email & password) |
+| State Management | Flutter built-in / Provider |
+| Platforms | Android, iOS, Web, Linux, macOS, Windows |
 
-Exécutez la commande suivante pour installer les dépendances :
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- [Flutter SDK](https://docs.flutter.dev/get-started/install) (stable channel)
+- [Dart SDK](https://dart.dev/get-dart) (bundled with Flutter)
+- [Android Studio](https://developer.android.com/studio) or [VS Code](https://code.visualstudio.com/) with the Flutter extension
+- [Firebase CLI](https://firebase.google.com/docs/cli) (for local emulation)
+- A Firebase project configured for your app
+
+---
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yannisduvignau/flutter-color-picker.git
+cd flutter-color-picker
+```
+
+### 2. Install dependencies
 
 ```bash
 flutter pub get
 ```
 
-## Commandes à lancer
+### 3. Configure Firebase
 
-### Pour démarrer l'application sur un simulateur ou un appareil :
+1. Go to the [Firebase Console](https://console.firebase.google.com/)
+2. Create a new Firebase project (or use an existing one)
+3. Register your app (Android and/or iOS)
+4. Download and add the configuration files:
+   - **Android:** place `google-services.json` in `android/app/`
+   - **iOS:** place `GoogleService-Info.plist` in `ios/Runner/`
+5. Enable **Firestore Database** in the Firebase console
+6. Enable **Authentication** → sign-in method → **Email/Password**
+
+### 4. Run the app
+
 ```bash
+# On a connected device or emulator
 flutter run
+
+# Specify a target platform
+flutter run -d android
+flutter run -d ios
+flutter run -d chrome        # Web
+flutter run -d linux
+flutter run -d macos
+flutter run -d windows
 ```
 
-### Pour vérifier la qualité du code et la présence de problèmes :
+---
+
+## 📜 Available Commands
+
+| Command | Description |
+|---------|-------------|
+| `flutter run` | Run the app on a connected device or emulator |
+| `flutter pub get` | Install all dependencies from `pubspec.yaml` |
+| `flutter analyze` | Run static analysis to detect code issues |
+| `flutter test` | Run unit and widget tests |
+| `flutter build apk` | Build an Android APK for production |
+| `flutter build ios` | Build an iOS archive for production |
+| `flutter build web` | Build the web version |
+| `flutter build linux` | Build the Linux desktop app |
+
+---
+
+## 🔥 Running Firebase Locally
+
+Use the **Firebase Local Emulator Suite** to develop and test without touching production data:
+
 ```bash
-flutter analyze
-```
-
-### Pour générer une version de production de votre application (Android) :
-```bash
-flutter build apk
-```
-
-### Pour générer une version iOS de votre application :
-```bash
-flutter build ios
-```
-
-## Lancer Firebase en local
-
-Si vous souhaitez exécuter Firebase en local pour le développement, vous pouvez utiliser Firebase Local Emulator Suite pour émuler Firestore et d'autres services Firebase.
-
-```bash
+# Start all emulators (Firestore, Auth, Hosting…)
 firebase emulators:start
+
+# Start specific emulators only
+firebase emulators:start --only firestore,auth
 ```
-Assurez-vous que Firebase CLI est installé avant de lancer cette commande.
 
-## Fonctionnalités
-- Création de palettes de couleurs : Créez et enregistrez des palettes de couleurs dans Firebase.
-- Affichage des palettes : Consultez vos palettes précédemment enregistrées.
-- Affichage des couleurs en hexadécimal : Chaque couleur est affichée avec sa valeur hexadécimale.
-- Suppression des palettes : Supprimez les palettes dont vous n'avez plus besoin.
-- Modification du nom des palettes : Modifiez facilement le nom d'une palette de couleurs.
+> Make sure [Firebase CLI](https://firebase.google.com/docs/cli) is installed: `npm install -g firebase-tools`
 
-## Démonstration
-Voici des captures d'écran de l'application en action :
+The emulator UI will be available at → [http://localhost:4000](http://localhost:4000)
 
-<div style="display: flex; justify-content: space-around;"> <img src="assets/img/homeScreen1.png" alt="Capture d'écran de l'application" height="400" style="margin-right: 20px;"/> <img src="assets/img/homeScreen2.png" alt="Capture d'écran de l'application" height="400"/> </div> * Écran d'accueil : choix de la couleur en HEXA et RGB depuis un champ ou par un bouton "random". <img src="assets/img/palletScreen.png" alt="Capture d'écran de l'application" height="400"/> * Écran de création d'une palette de couleur à partir de la couleur donnée. Cette palette peut être enregistrée et sauvegardée pour l'utilisateur connecté. <img src="assets/img/collectionScreen.png" alt="Capture d'écran de l'application" height="400"/> * Écran de visualisation des palettes enregistrées.
+---
 
+## ✨ Features
 
+| Feature | Description |
+|---------|-------------|
+| 🎨 Color picking | Enter a HEX code, RGB values, or generate a random color |
+| 🖌️ Palette generation | Automatically generate a full palette from any base color |
+| 💾 Save palettes | Persist palettes to Firestore, linked to the logged-in user |
+| 📚 Browse collections | View all saved palettes in a dedicated collection screen |
+| ✏️ Rename palettes | Edit the name of any saved palette |
+| 🗑️ Delete palettes | Remove palettes from your collection |
+| 🔐 Authentication | Register and log in with email and password via Firebase Auth |
+
+---
+
+## 🔧 Configuration Files
+
+| File | Purpose |
+|------|---------|
+| `pubspec.yaml` | Dart/Flutter dependencies, fonts, and asset declarations |
+| `firebase.json` | Firebase project configuration (hosting, emulators) |
+| `analysis_options.yaml` | Dart linting rules (based on `flutter_lints`) |
+| `android/app/google-services.json` | Firebase config for Android *(not committed)* |
+| `ios/Runner/GoogleService-Info.plist` | Firebase config for iOS *(not committed)* |
+
+---
+
+## ✅ Testing
+
+```bash
+# Run all tests
+flutter test
+
+# Run a specific test file
+flutter test test/widget_test.dart
+
+# Run with verbose output
+flutter test --verbose
+```
+
+---
+
+## 🤝 Contributing
+
+1. Fork the project
+2. Create your branch (`git checkout -b feature/new-feature`)
+3. Commit your changes (`git commit -m 'Add new color picker mode'`)
+4. Push to the branch (`git push origin feature/new-feature`)
+5. Open a Pull Request
+
+---
+
+## 👤 Author
+
+**Yannis Duvignau**  
+[GitHub](https://github.com/yannisduvignau)
+
+---
+
+## 📚 Resources
+
+- 📖 [Flutter Documentation](https://docs.flutter.dev/)
+- 🔥 [Firebase for Flutter](https://firebase.google.com/docs/flutter/setup)
+- 🗄️ [Cloud Firestore Docs](https://firebase.google.com/docs/firestore)
+- 🔐 [Firebase Authentication](https://firebase.google.com/docs/auth)
+- 🧪 [Flutter Testing Guide](https://docs.flutter.dev/testing)
+- 🖥️ [Flutter Local Emulator Suite](https://firebase.google.com/docs/emulator-suite)
+
+---
+
+## 📄 License
+
+This project is distributed under an open license. See the `LICENSE` file for more details.
